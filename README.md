@@ -17,7 +17,6 @@
     │   ├── routers.py
     │   └── schemas
     ├── core
-    │   ├── __pycache__
     │   ├── config.py
     │   └── logger.py
     ├── domain

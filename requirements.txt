@@ -1,5 +1,7 @@
 openai
 sqlmodel
 fastapi
+pydantic-settings
+pydantic
 langchain
 langgraph

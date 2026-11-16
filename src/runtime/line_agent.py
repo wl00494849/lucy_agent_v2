@@ -1,9 +1,9 @@
-from src.infrastructure.llms.langchain_client import LangChainChat
+from src.agents.linebot.agent import LineBotAgent
 
 class LineAgent():
     def __init__(self):
-        self.chat = LangChainChat()
+        self.agent = LineBotAgent()
     
-    def agent(self,prompt:str)->str:
-        memory = []
+    def reply(self,prompt:str)->str:
+        pass
         

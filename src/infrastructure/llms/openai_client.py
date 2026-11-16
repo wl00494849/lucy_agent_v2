@@ -11,9 +11,9 @@ class OpenAIChat():
         self.client = OpenAI(api_key=self._api_key)
         self.model = model
 
-    def get_vector(self,text:str,is_big_size:bool=False):
+    def get_vector(self,text:str,big_size_vetor_model:bool=False):
         model = "text-embedding-3-small"
-        if is_big_size == True:
+        if big_size_vetor_model == True:
             model = "text-embedding-3-large"
         
         response = self.client.embeddings.create(
