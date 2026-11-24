@@ -2,7 +2,7 @@ from openai import OpenAI
 from src.core.config import settings
 import os
 
-class OpenAIChat():
+class OpenAIClient():
     def __init__(
             self,
             model:str = "gpt-4.1-mini"
@@ -11,9 +11,9 @@ class OpenAIChat():
         self.client = OpenAI(api_key=self._api_key)
         self.model = model
 
-    def get_vector(self,text:str,big_size_vetor_model:bool=False):
+    def get_vector(self,text:str,model_size:bool=False):
         model = "text-embedding-3-small"
-        if big_size_vetor_model == True:
+        if model_size == True:
             model = "text-embedding-3-large"
         
         response = self.client.embeddings.create(
@@ -21,7 +21,7 @@ class OpenAIChat():
             input=text
         )
 
-        vector = response.data
+        vector = response.data[0].embedding
         return vector
 
     def request(self,prompt:str,model:str=None)->str:
@@ -31,7 +31,7 @@ class OpenAIChat():
 
         response = self.client.responses.create(
             model=use_model,
-            prompt=prompt
+            input=prompt
         )
 
         text = response.output_text

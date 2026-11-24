@@ -1,9 +1,13 @@
 from fastapi import FastAPI
+from src.api.main import router
+from src.core.config import settings
 
 app = FastAPI()
-
-def main():
-    pass
+app.include_router(router)
 
 if __name__ == "__main__":
-    main()
+    import uvicorn
+    uvicorn.run(
+        app=app,
+        port=settings.PORT,
+)

@@ -4,7 +4,7 @@ from contextlib import contextmanager
 from src.core.config import settings
 
 _psql_engine = create_engine(
-    url=settings.POSTGRESQL_URL
+    url=settings.postgresql_url
 )
 
 _psql_session_maker = sessionmaker(

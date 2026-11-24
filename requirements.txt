@@ -1,7 +1,10 @@
 openai
 sqlmodel
 fastapi
+uvicorn
 pydantic-settings
 pydantic
 langchain
 langgraph
+redis
+numpy
