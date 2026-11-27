@@ -8,3 +8,5 @@ langchain
 langgraph
 redis
 numpy
+google-auth
+google-api-python-client

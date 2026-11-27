@@ -1,6 +1,5 @@
 from openai import OpenAI
 from src.core.config import settings
-import os
 
 class OpenAIClient():
     def __init__(

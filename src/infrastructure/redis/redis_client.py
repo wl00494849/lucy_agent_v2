@@ -15,18 +15,23 @@ class RedisClient():
         self.ping()
         print("Redis connect success")
 
-    def redis_set(self,):
-        self.client.set()
+    def redis_set(self,val:any,key:str):
+        self.client.set(name=key,value=val)
         pass
 
-    def redis_get(self):
-        self.client.get()
+    def redis_get(self,key:str):
+        self.client.get(key)
         pass
 
-    def redis_delete(self):
-        self.client.delete()
+    def redis_delete(self,key:str):
+        self.client.delete(key)
+        pass
+    
+    def redis_rpush(self,key:str,val:any):
+        pass
+
+    def redis_lpush(self,key:str,val:any):
         pass
 
     def redis_eval(self):
-        self.client.eval()
         pass
